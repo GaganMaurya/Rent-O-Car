@@ -1,26 +1,23 @@
-package com.example.adminrentocar
+package com.example.rentocar
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.adminrentocar.databinding.ActivityMainBinding
+import android.widget.Toast
+import com.example.rentocar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var  b : ActivityMainBinding
+    lateinit var binding :  ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        b = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(b.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        b.first.setOnClickListener {
-            startActivity(Intent(this , firstPagerv1::class.java))
-        }
-        b.second.setOnClickListener {
-            startActivity(Intent(this , firstPagerv2::class.java))
-        }
-        b.third.setOnClickListener {
-            startActivity(Intent(this , images::class.java))
-        }
 
+        binding.btn.setOnClickListener {
+
+            val intent = Intent(this ,  firstPage::class.java)
+            startActivity(intent)
+        }
     }
 }
