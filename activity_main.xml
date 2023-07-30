@@ -1,31 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/greymain"
     android:layout_height="match_parent"
-    android:padding="12dp"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-   <Button
-       android:id="@+id/first"
-       android:layout_width="match_parent"
-       android:layout_height="56dp"
-       android:textSize="22sp"
-      android:text="firstrv"/>
-   <Button
-       android:id="@+id/second"
-       android:layout_width="match_parent"
-       android:layout_height="56dp"
-       android:textSize="22sp"
-       android:layout_marginTop="16dp"
-       android:text="secondrv"/>
-   <Button
-       android:id="@+id/third"
-       android:layout_width="match_parent"
-       android:layout_height="56dp"
-       android:textSize="22sp"
-       android:layout_marginTop="16dp"
-       android:text="imageslider"/>
-</LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/con"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="70dp"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/f1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="@string/rent"
+        android:textColor="#F6C329"
+        android:fontFamily="@font/robotomedium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/f2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:text="@string/o"
+            android:textColor="@color/white"
+            android:fontFamily="@font/robotomedium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/f1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/car"
+            android:textColor="#F6C329"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/f2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/carimage"
+        android:layout_width="700dp"
+        android:layout_height="400dp"
+        android:rotation="-6"
+        android:src="@drawable/firstpagecarimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toEndOf="@id/con"/>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotolight"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="@string/rent_a_car_with_nyour_lifestyle"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carimage" />
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotolight"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:text="@string/rent_o_car_the_best_car_rental_platform_in_india_n_with_a_large_selection_of_luxury_cars"
+        android:textColor="@color/black1"
+        android:textSize="14sp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text1" />
+
+    <TextView
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Let's Rent"
+        android:fontFamily="@font/robotomedium"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ripplebac"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
